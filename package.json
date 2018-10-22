@@ -1,0 +1,57 @@
+{
+  "name": "graphql-lowdb-upload-server-example",
+  "version": "0.1.0",
+  "description": "Demonstration how to upload and serve files with graphQL and lowDB",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "./src/server.js",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js --exec babel-node ",
+    "build": "babel src -d dist",
+    "serve": "node dist/server.js",
+    "test": "cross-env NODE_ENV=development ./node_modules/.bin/eslint src/*.js && mocha ./src/__tests__/*.js --require babel-register --exit"
+  },
+  "author": "Niko Rudnäs",
+  "license": "MIT",
+  "nodemonConfig": {
+    "ignore": [
+      "src/__tests__/*",
+      "database/*",
+      "uploads/*"
+    ]
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.1.0",
+    "babel-polyfill": "^6.26.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "express-rate-limit": "^3.2.1",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.1",
+    "helmet": "^3.14.0",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.11",
+    "lowdb": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4"
+  }
+}
