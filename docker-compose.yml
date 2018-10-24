@@ -1,0 +1,7 @@
+version: '2'
+services:
+  graphql-lowdb-upload-server-example:
+    build: .
+    container_name: 'graphql-lowdb-upload-server-example'
+    ports:
+      - '4000:4000'
